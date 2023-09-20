@@ -39,11 +39,11 @@ const RenderQuestion = ({ children, quesIdx }) => {
         return (
             <></>
         )
-        
+
     return (
-        <div className='text-xl md:text-2xl pt-7 pb-4 overflow-x-scroll md:overflow-x-hidden'>
+        <div className='text-xl md:text-2xl pt-7 pb-4 overflow-y-hidden overflow-x-scroll md:overflow-x-hidden'>
             <MathJaxContext config={config}>
-                <MathJax inline>
+                <MathJax inline={true} dynamic={true}>
                     {children}
                 </MathJax>
             </MathJaxContext>
