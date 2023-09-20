@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes } from "react-router-dom"
+import Navbar from "./components/common/Navbar"
+import LandingPage from "./components/core/LandingPage"
+import TestPage from "./components/core/TestPage"
+import ResultPage from "./components/core/ResultPage"
+import { Toaster } from "react-hot-toast"
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const App = () => {
+    return (
+        <div className="w-screen min-h-screen overflow-x-hidden">
+            <Navbar />
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route path="/test" element={<TestPage />} />
+                <Route path="/result" element={<ResultPage />} />
+            </Routes>
+            <Toaster />
+        </div>
+    )
 }
 
-export default App;
+export default App
